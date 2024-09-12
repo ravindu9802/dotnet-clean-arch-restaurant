@@ -1,10 +1,16 @@
+using Restaurants.Application.Extensions;
 using Restaurants.Infrastructure.Extensions;
 using Restaurants.Infrastructure.Seeders;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // add infrastructure service extension
-builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddInfrastructureLayer(builder.Configuration);
+
+// add application service extension
+builder.Services.AddApplicationLayer();
+
+builder.Services.AddControllers();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -29,5 +35,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapControllers();
 
 app.Run();
