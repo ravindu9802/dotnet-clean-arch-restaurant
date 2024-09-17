@@ -41,7 +41,7 @@ internal class RestaurantRepository : IRestaurantRepository
             item.Dishes = restaurant.Dishes;
             return true;
         }
-        return null;
+        return false;
     }
 
     public async Task<bool?> DeleteRestaurantAsync(Guid id)
@@ -50,8 +50,9 @@ internal class RestaurantRepository : IRestaurantRepository
         if (item != null)
         {
             _context.Restaurants.Remove(item);
+            return true;
         }
-        return true;
+        return false;
     }
 
 }
