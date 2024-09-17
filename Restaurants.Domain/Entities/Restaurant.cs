@@ -12,7 +12,7 @@ public class Restaurant
 
     public Address? Address { get; set; }
 
-    [JsonIgnore]
+    //[JsonIgnore]
     public ICollection<Dish>? Dishes { get; set; }
 
 }
