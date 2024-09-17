@@ -15,6 +15,7 @@ public static class ServiceCollectionExtension
     {
         services.AddSqlServer<RestaurantDbContext>(configuration.GetConnectionString("DefaultConnection"));
         services.AddScoped<IRestaurantRepository, RestaurantRepository>();
+        services.AddScoped<IDishRepository, DishRepository>();
         services.AddScoped<IRestaurantSeeder, RestaurantSeeder>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
     }

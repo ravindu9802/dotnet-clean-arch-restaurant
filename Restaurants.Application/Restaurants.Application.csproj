@@ -7,16 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="RestaurantCQ\Handlers\CommandHandlers\DeleteRestaurantCommandHandler.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MediatR" Version="12.4.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Restaurants.Domain\Restaurants.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DishCQ\Commands\" />
-    <Folder Include="DishCQ\Queries\" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,6 @@
-﻿namespace Restaurants.Domain.Entities;
+﻿using System.Text.Json.Serialization;
+
+namespace Restaurants.Domain.Entities;
 
 public class Dish
 {
@@ -7,6 +9,8 @@ public class Dish
     public decimal Price { get; set; }
     public decimal KiloCalories { get; set; }
     public Guid RestaurantId { get; set; }
-    public Restaurant Restaurant { get; set; } = null!;
+
+    [JsonIgnore]
+    public Restaurant? Restaurant { get; set; }
 
 }
